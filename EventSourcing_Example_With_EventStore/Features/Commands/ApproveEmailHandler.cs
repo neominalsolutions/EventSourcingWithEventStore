@@ -9,10 +9,10 @@ namespace EventSourcing_Example_With_EventStore.Features.Commands
 {
   public class ApproveEmailHandler : IRequestHandler<ApproveEmailDto>
   {
-    readonly UserAggregate _userAggregate;
+    readonly UserStreamAggregate _userAggregate;
     readonly UserStreamRepository _userStreamRepository;
 
-    public ApproveEmailHandler(UserAggregate userAggregate, UserStreamRepository userStreamRepository)
+    public ApproveEmailHandler(UserStreamAggregate userAggregate, UserStreamRepository userStreamRepository)
     {
       _userAggregate = userAggregate;
       _userStreamRepository = userStreamRepository;

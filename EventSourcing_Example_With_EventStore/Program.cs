@@ -3,7 +3,6 @@ using EventSourcing_Example_With_EventStore.Aggregates;
 using EventSourcing_Example_With_EventStore.Aggregates.Repositories;
 using EventSourcing_Example_With_EventStore.Database;
 using EventSourcing_Example_With_EventStore.Models;
-using EventSourcing_Example_With_EventStore.Subscriptions;
 using EventStore.ClientAPI;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
@@ -32,7 +31,7 @@ connection.ConnectAsync().GetAwaiter().GetResult();
 builder.Services.AddSingleton(connection);
 // services.AddSingleton<StreamRepository>();
 builder.Services.AddSingleton<UserStreamRepository>();
-builder.Services.AddSingleton<UserAggregate>();
+builder.Services.AddSingleton<UserStreamAggregate>();
 
 //IMongoCollection<User> userCollection = MongoDBConfiguration.Collection<User>("users");
 //// tüm stream subscribe olduk sadece user ile ilgi eventleri dinleyip, mongodbde production oluþturduk.

@@ -9,10 +9,10 @@ namespace EventSourcing_Example_With_EventStore.Features.Commands
 {
   public class ChangeUserNameHandler : IRequestHandler<ChangeUserNameDto>
   {
-    readonly UserAggregate _userAggregate;
+    readonly UserStreamAggregate _userAggregate;
     readonly UserStreamRepository _userStreamRepository;
 
-    public ChangeUserNameHandler(UserAggregate userAggregate, UserStreamRepository userStreamRepository)
+    public ChangeUserNameHandler(UserStreamAggregate userAggregate, UserStreamRepository userStreamRepository)
     {
       _userAggregate = userAggregate;
       _userStreamRepository = userStreamRepository;

@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace EventSourcing_Example_With_EventStore.Aggregates.Abstractions
 {
-    public abstract class Aggregate
+    public abstract class StreamAggregate
     {
         //Oluşan tüm event'leri tutacak koleksiyon.
         protected readonly List<IEvent> events = new();
         public List<IEvent> GetEvents => events;
         //Event'lerin tutulacağı Aggregate/Stream adı.
-        public string StreamName { get; private set; }
+        public string StreamName { get; private set; } 
+
+        // userStreams
         public void SetStreamName(string streamName)
             => StreamName = streamName;
         //Stream adının atanıp atanmadığını kontrol eden fonksiyon.

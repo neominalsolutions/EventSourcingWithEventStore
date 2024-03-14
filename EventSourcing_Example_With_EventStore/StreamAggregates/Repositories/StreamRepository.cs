@@ -20,7 +20,7 @@ namespace EventSourcing_Example_With_EventStore.Aggregates.Repositories
 
     }
     //Oluşturulan event'leri Event Store'a kaydeder.
-    public async Task SaveAsync<T>(T aggregate) where T : Aggregate, new()
+    public async Task SaveAsync<T>(T aggregate) where T : StreamAggregate, new()
     {
       var options = new JsonSerializerOptions
       {

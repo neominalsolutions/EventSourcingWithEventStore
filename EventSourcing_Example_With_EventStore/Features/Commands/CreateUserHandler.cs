@@ -10,10 +10,10 @@ namespace EventSourcing_Example_With_EventStore.Features.Commands
 {
   public class CreateUserHandler : IRequestHandler<CreateUserDto>
   {
-    readonly UserAggregate _userAggregate;
+    readonly UserStreamAggregate _userAggregate;
     readonly UserStreamRepository _userStreamRepository;
 
-    public CreateUserHandler(UserAggregate userAggregate, UserStreamRepository userStreamRepository)
+    public CreateUserHandler(UserStreamAggregate userAggregate, UserStreamRepository userStreamRepository)
     {
       _userAggregate = userAggregate;
       _userStreamRepository = userStreamRepository;

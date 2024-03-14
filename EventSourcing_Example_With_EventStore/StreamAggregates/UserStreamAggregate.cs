@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace EventSourcing_Example_With_EventStore.Aggregates
 {
   // User Sınıfı ile ilgili eventleri yönettiğimiz sınıf.
-  public class UserAggregate : Aggregate
+  public class UserStreamAggregate : StreamAggregate
   {
     //Kullanıcı oluşturulduğunda
     public void Created(User model)
